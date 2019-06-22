@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+5ec56f345bce0899a2f173a989dca6d0 org.kde.mediacontrol-plasmoids-metadata.json
+aa9ee6c7b1893cf713b7f11b3e2a69f2 org.mediacontrol-plasmoids-metadata.json

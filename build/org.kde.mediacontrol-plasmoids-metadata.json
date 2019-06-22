@@ -1,0 +1,23 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "parker.stromberg@gmail.com",
+                "Name": "Parker Stromberg"
+            }
+        ],
+        "Category": "ApplicationStatus",
+        "Id": "parker.mediacontrol",
+        "License": "GPL",
+        "Name": "Media Control",
+        "ServiceTypes": [
+            "Plasma/Applet"
+        ],
+        "Version": "1.0"
+    },
+    "X-KDE-ParentApp": "",
+    "X-Plasma-API": "declarativeappletscript",
+    "X-Plasma-DBusActivationService": "org.mpris.MediaPlayer2.*",
+    "X-Plasma-MainScript": "ui/main.qml",
+    "X-Plasma-NotificationArea": "true"
+}
