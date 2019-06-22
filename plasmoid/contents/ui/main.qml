@@ -16,6 +16,13 @@ Item {
 	Plasmoid.compactRepresentation: Item {
 		Layout.minimumWidth: 220;
 
+		MouseArea {
+			anchors.fill: parent
+			onClicked: {
+				plasmoid.expanded = !plasmoid.expanded
+			}
+		}
+
 		Image {
 			id: image
 			width: parent.height 
@@ -24,13 +31,6 @@ Item {
 			source: {
 				var data = mpris2Source.currentData;
 				return data && data.Metadata ? data.Metadata['mpris:artUrl'] : '';
-			}
-
-			MouseArea {
-				anchors.fill: parent
-				onClicked: {
-					plasmoid.expanded = !plasmoid.expanded
-				}
 			}
 		}
 
@@ -65,46 +65,16 @@ Item {
 			anchors.leftMargin: 10
 		}
 
-		Item {
+		ProgressBar {
 			anchors.left: image.right
 			anchors.top: artist.bottom
 
-			anchors.topMargin: 13
+			anchors.topMargin: 15
 			anchors.leftMargin: 10
 			width: parent.width - image.width - anchors.leftMargin - image.anchors.rightMargin
-
-			Rectangle {
-				id: progress
-				width: 0
-				height: 1
-				color: "#62dbaf"
-				anchors.left: parent.left
-			}	
-
-			Rectangle {
-				id: totalTime
-				width: parent.width - progress.width
-				height: 1
-				color: "gray"
-				anchors.left: progress.right
-			}
-
-			Timer {
-				interval: 10 
-				running: true
-				repeat: true
-				onTriggered: {
-					progress.width += 0.01;
-					if (totalTime.width <= 0) {
-						progress.width = 0;
-					}
-
-				}
-			}
 		}
 	}
 
-	    
 	PlasmaCore.DataSource {
         
 		id: mpris2Source
