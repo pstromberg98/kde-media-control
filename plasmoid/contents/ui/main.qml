@@ -7,26 +7,19 @@ import org.kde.plasma.plasmoid 2.0
 Item {
 	id: root
 
-	Plasmoid.icon: "user-grace-hopper"
 	Plasmoid.switchHeight: units.gridUnit * 10
 	Plasmoid.switchWidth: units.gridUnit * 14
 	Plasmoid.status: PlasmaCore.Types.PassiveStatus
 
-	Plasmoid.fullRepresentation: Item {
-		Rectangle {
-			width: 100
-			height: 100
-			color: "red"
-		}
-	}
+	Plasmoid.fullRepresentation: ExpandedRepresentation {}
 
 	Plasmoid.compactRepresentation: Item {
 		Layout.minimumWidth: 220;
 
 		Image {
+			id: image
 			width: parent.height 
 			height: parent.height
-			id: image
 
 			source: {
 				var data = mpris2Source.currentData;
