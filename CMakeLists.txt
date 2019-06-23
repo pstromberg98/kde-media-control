@@ -11,4 +11,6 @@ set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_MODULE_PA
 find_package(KF5Plasma REQUIRED)
 
 # Add installatation target ("make install").
-plasma_install_package(plasmoid org.mediacontrol)
+plasma_install_package(plasmoid parker_mediacontrol)
+
+kpackage_install_package(plasmoid kcm_settings_devel kcms)

@@ -9,12 +9,14 @@ Item {
 
 	Plasmoid.switchHeight: units.gridUnit * 10
 	Plasmoid.switchWidth: units.gridUnit * 14
-	Plasmoid.status: PlasmaCore.Types.PassiveStatus
+	Plasmoid.status: PlasmaCore.Types.ActiveStatus
 
 	Plasmoid.fullRepresentation: ExpandedRepresentation {}
 
 	Plasmoid.compactRepresentation: Item {
-		Layout.minimumWidth: 220;
+		Layout.minimumWidth: 250
+		anchors.rightMargin: 5
+		anchors.leftMargin: 5
 
 		MouseArea {
 			anchors.fill: parent
@@ -29,8 +31,8 @@ Item {
 			height: parent.height
 
 			source: {
-				var data = mpris2Source.currentData;
-				return data && data.Metadata ? data.Metadata['mpris:artUrl'] : '';
+				var data = mpris2Source ? mpris2Source.currentData : {};
+				return data && data.Metadata ? data.Metadata['mpris:artUrl'] || '' : '';
 			}
 		}
 
@@ -39,37 +41,20 @@ Item {
 			elide: Text.ElideRight
 			width: parent.width - image.width;
 			text: {
-				var data = mpris2Source.currentData;
-				return data && data.Metadata ? data.Metadata['xesam:title'] : '';
+				var data = mpris2Source ? mpris2Source.currentData : {};
+				return data && data.Metadata ? data.Metadata['xesam:title'] || '' : '';
 			}
-			font.pixelSize: 21
+			font.pixelSize: 18
 			color: "white"
 			anchors.left: image.right
 			anchors.leftMargin: 10
 		}	
 
-		Text {
-			id: artist
-			elide: Text.ElideRight
-			text: {
-				var data = mpris2Source.currentData;
-				return data && data.Metadata ? data.Metadata['xesam:artist'] : '';
-			}
-
-			font.pixelSize: 12
-			color: "gray"
-
+		ProgressBar {
 			anchors.left: image.right
 			anchors.top: title.bottom
 
-			anchors.leftMargin: 10
-		}
-
-		ProgressBar {
-			anchors.left: image.right
-			anchors.top: artist.bottom
-
-			anchors.topMargin: 15
+			anchors.topMargin: 10
 			anchors.leftMargin: 10
 			width: parent.width - image.width - anchors.leftMargin - image.anchors.rightMargin
 		}

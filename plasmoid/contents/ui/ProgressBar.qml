@@ -10,7 +10,7 @@ Item {
 	Rectangle {
 		id: progress
 		width: 0
-		height: 2
+		height: 4
 		color: "white"
 		anchors.left: parent.left
 	}	
@@ -18,7 +18,7 @@ Item {
 	Rectangle {
 		id: totalTime
 		width: parent.width - progress.width
-		height: 2
+		height: 4
 		color: "gray"
 		anchors.left: progress.right
 	}

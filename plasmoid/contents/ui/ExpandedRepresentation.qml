@@ -48,7 +48,7 @@ Item {
 		Text {
 			id: album
 
-			color: "gray"
+			color: "#A9A9A9"
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.top: title.bottom
 			anchors.topMargin: 5
