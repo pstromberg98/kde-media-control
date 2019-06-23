@@ -1,7 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.1
 import QtGraphicalEffects 1.12
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.components 3.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.plasmoid 2.0
 
@@ -61,10 +61,44 @@ Item {
 		}
 
 		ProgressBar {
+			id: progressBar
 			anchors.top: album.bottom
 			anchors.topMargin: 15
 			anchors.horizontalCenter: parent.horizontalCenter
 			width: root.width
+		}
+
+		Item {
+			width: parent.width
+			height: controlOptions.height
+			anchors.topMargin: 10
+			anchors.top: progressBar.top
+			
+			Row {
+				id: controlOptions
+				anchors.horizontalCenter: parent.horizontalCenter
+
+				PlasmaComponents.ToolButton {
+					anchors.verticalCenter: parent.verticalCenter
+					height: 40
+					width: 50
+					icon.name: "media-skip-backward"
+				}
+
+				PlasmaComponents.ToolButton {
+					height: 50
+					width: 50
+					icon.name: "media-playback-pause"
+				}
+
+				PlasmaComponents.ToolButton {
+					anchors.verticalCenter: parent.verticalCenter
+					height: 40
+					width: 50
+					icon.name: "media-skip-forward"
+				}
+
+			}
 		}
 	}
 
