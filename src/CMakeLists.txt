@@ -16,4 +16,4 @@ target_link_libraries(plasma_applet_mediacontrol
 
 install(TARGETS plasma_applet_mediacontrol DESTINATION ${KDE_INSTALL_PLUGINDIR}/plasma/applets)
 
-plasma_install_package(package parker.mediacontrol)
+plasma_install_package(package parker.mediacontrol applet)
