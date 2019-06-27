@@ -80,21 +80,21 @@ Item {
 
 				PlasmaComponents.ToolButton {
 					anchors.verticalCenter: parent.verticalCenter
-					height: 40
-					width: 50
+					height: 50
+					width: 60
 					icon.name: "media-skip-backward"
 				}
 
 				PlasmaComponents.ToolButton {
-					height: 50
-					width: 50
+					height: 60
+					width: 60
 					icon.name: "media-playback-pause"
 				}
 
 				PlasmaComponents.ToolButton {
 					anchors.verticalCenter: parent.verticalCenter
-					height: 40
-					width: 50
+					height: 50
+					width: 60
 					icon.name: "media-skip-forward"
 				}
 

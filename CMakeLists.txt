@@ -1,16 +1,24 @@
 cmake_minimum_required(VERSION 2.8.12)
 
-# Use Extra CMake Modules (ECM) for common functionality.
-# See http://api.kde.org/ecm/manual/ecm.7.html
-# and http://api.kde.org/ecm/manual/ecm-kde-modules.7.html
 find_package(ECM REQUIRED NO_MODULE)
-# Needed by find_package(KF5Plasma) below.
+
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_MODULE_PATH})
 
+include(KDEInstallDirs)
+include(KDECMakeSettings)
+include(KDECompilerSettings NO_POLICY_SCOPE)
+include(FeatureSummary)
+
 # Locate plasma_install_package macro.
-find_package(KF5Plasma REQUIRED)
+find_package(KF5 REQUIRED COMPONENTS
+	Plasma
+)
 
-# Add installatation target ("make install").
-plasma_install_package(plasmoid parker_mediacontrol)
+find_package(Qt5 CONFIG REQUIRED COMPONENTS
+    Quick
+    Core
+)
 
-kpackage_install_package(plasmoid kcm_settings_devel kcms)
+add_subdirectory("src")
+
+feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)

@@ -1,25 +1,26 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Media Control
+Name=MediaControl 
 Type=Service
 Comment=Nothing
 Icon=applications-multimedia
-X-KDE-ServiceTypes=Plasma/Applet,Plasma/Containment
+X-KDE-ServiceTypes=Plasma/Applet
 
 X-KDE-PluginInfo-Author=Parker Stromberg
 X-KDE-PluginInfo-Email=parker.stromberg@gmail.com
 X-KDE-PluginInfo-License=GPL
-X-KDE-PluginInfo-Name=parker_mediacontrol
+X-KDE-PluginInfo-Name=parker.mediacontrol
 X-KDE-PluginInfo-Version=1.0
 X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml
+X-KDE-Library=plasma_applet_mediacontrol
 # X-Plasma-NotificationArea=true
 # X-Plasma-NotificationAreaCategory=SystemServices
-X-Plasma-Provides=org.kde.plasma.multimediacontrols
+# X-Plasma-Provides=org.kde.plasma.multimediacontrols
 X-KDE-PluginInfo-Category=Multimedia
 X-KDE-PluginInfo-Depends=
 X-KDE-PluginInfo-EnabledByDefault=true
 X-Plasma-StandAloneApp=true
-X-Plasma-ContainmentType=Panel
+# X-Plasma-ContainmentType=Panel
 # X-Plasma-DBusActivationService=org.mpris.MediaPlayer2.*
 X-KDE-FormFactors=desktop
