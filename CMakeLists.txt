@@ -9,6 +9,8 @@ include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(FeatureSummary)
 
+find_library(NAMES aquila)
+
 # Locate plasma_install_package macro.
 find_package(KF5 REQUIRED COMPONENTS
 	Plasma
@@ -16,6 +18,7 @@ find_package(KF5 REQUIRED COMPONENTS
 
 find_package(Qt5 CONFIG REQUIRED COMPONENTS
     Quick
+    Multimedia
     Core
 )
 

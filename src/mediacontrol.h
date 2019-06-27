@@ -3,6 +3,7 @@
 
 
 #include <Plasma/Applet>
+#include <QAudioBuffer>
 
 class MediaControl : public Plasma::Applet
 {
@@ -17,6 +18,9 @@ public:
     ~MediaControl();
 
     QString nativeText() const;
+
+public slots:
+	void calculateFrequency(QAudioBuffer buffer);
 
 private:
     QString m_nativeText;
