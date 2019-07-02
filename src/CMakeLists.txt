@@ -5,13 +5,13 @@ set(MC_SRCS
 )
 
 add_library(plasma_applet_mediacontrol MODULE ${MC_SRCS})
-add_library(aquila SHARED IMPORTED)
-set_property(TARGET aquila PROPERTY IMPORTED_LOCATION "/usr/local/lib/libAquila.so")
+# add_library(aquila SHARED "/usr/local/lib/libAquila.so")
+# set_property(TARGET aquila PROPERTY IMPORTED_LOCATION "/usr/local/lib/libAquila.so")
 
 kcoreaddons_desktop_to_json(plasma_applet_mediacontrol package/metadata.desktop SERVICE_TYPES plasma-applet.desktop)
 
 target_link_libraries(plasma_applet_mediacontrol
-		      aquila
+		      Aquila
                       Qt5::Gui
 		      Qt5::Quick
 		      Qt5::Multimedia
